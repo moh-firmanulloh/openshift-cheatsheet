@@ -1,1 +1,1 @@
-oc get node -l=<node-labels> --no-headers -ojson | jq -jr '.items[] | .status.capacity.memory,"+" | sub("Ki"; "")' | rev | cut -c2- | rev | bc | awk '{print $1/1024/1024/1024}'
+oc get node -l=<node-labels> --no-headers -ojson | jq -jr '.items[] | .status.capacity.memory,"+" | sub("Ki"; "")' | rev | cut -c2- | rev | bc 
